@@ -1,9 +1,9 @@
 @media all and (min-width: 480px) {
-    .Login {
+    .login {
       padding: 60px 0;
     }
   
-    .Login form {
+    .login form {
       margin: 0 auto;
       max-width: 320px;
     }
@@ -11,7 +11,7 @@
 
   @media all and (min-width: 480px) {
     .sign {
-      padding: 60px 0;
+      padding: 120px 0;
     }
   
     .sign form {

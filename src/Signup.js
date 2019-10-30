@@ -32,48 +32,50 @@ const Signup = () => {
 
   return (
     <div>
-      <Modal show={show} onHide={handleCancel}>
+     <Modal show={show} onHide={handleCancel}>
         <Modal.Header closeButton>
-          <Modal.Title>Sign up</Modal.Title>
+          <Modal.Title>Signup</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="sign">
-            <form className='sign'>
-              <p>Username</p>
-              <input type="text"
-                onChange={e => setUsername(e.target.value)
-                }
-              /><br></br><br />
-              <p>Password</p>
-              <input type="text"
-                onChange={e => setEmail(e.target.value)
-                }
-              /><br></br><br />
-              <p>Password</p>
-              <input type="text"
-                onChange={e => setPassword(e.target.value)
-                }
-              /><br></br><br />
-              <br />
-              <Button
-                className='button'
-                onClick={handleSignup}
-                block
-                type="submit"
-                primary={true}
-              >
-                <h3>Log in</h3>
-              </Button>
-              <Modal.Footer>
-              <Button variant="secondary" onClick={handleCancel}>close</Button>
-
-              </Modal.Footer>
-            </form>
-          </div>
+          <p>
+            UserName: 
+            <input 
+              type="text" 
+              name={username} 
+              onChange={e => setUsername(e.target.value)} 
+            /> 
+            <br />
+          </p>
+          <p>
+            Email: 
+            <input 
+              type="email" 
+              name={email} 
+              onChange={e => setEmail(e.target.value)}
+            /> 
+            <br />
+          </p>
+          <p>
+            Password: 
+            <input 
+              type="password" 
+              password={password} 
+              onChange={e => setPassword(e.target.value)}
+            /> 
+            <br />
+          </p>
         </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleSignup}>
+            Signup
+          </Button>
+          <Button variant="secondary" onClick={handleCancel}>
+            Cancel
+          </Button>
+        </Modal.Footer>
       </Modal>
 
-      <h1>{show ? '' : 'Success Sign up!'}</h1>
+      <h9>{show ? '' : 'Signed'}</h9>
     </div>
   );
 }

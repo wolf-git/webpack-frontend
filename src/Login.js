@@ -33,40 +33,56 @@ const Login = () => {
     <div>
       <Modal show={show} onHide={handleCancel}>
         <Modal.Header closeButton>
-          <Modal.Title>Log in and Start!</Modal.Title>
+          <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="Login">
-            <form className='Login'>
-              <p>Username</p>
-              <input type="text"
-                onChange={e => setName(e.target.value)
-                }
-              /><br></br><br />
-              <p>Password</p>
-              <input type="text"
-                onChange={e => setPassword(e.target.value)
-                }
-              /><br></br><br />
-              <br />
-              <Button
-                className='button'
-                onClick={handleLogin}
-                block
-                type="submit"
-                primary={true}
-              >
-                <h3>Log in</h3>
-              </Button>
-              <Modal.Footer>
-              <Button variant="secondary" onClick={handleCancel}>close</Button>
-              </Modal.Footer>
-            </form>
-          </div>
+          <p>
+            UserName:
+            <input
+              type="text"
+              value={username}
+              onChange={e => setName(e.target.value)}
+            />
+          </p>
+          <p>
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+            />
+          </p>
         </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleLogin}>
+            Login
+          </Button>
+          <Button variant="secondary" onClick={handleCancel}>
+            Cancel
+          </Button>
+        </Modal.Footer>
       </Modal>
 
-      <h1>{show ? '' : 'Success log in!'}</h1>
+      <h9>{show ? '' : 'Login success'}</h9>
+
+      {/* <ul>
+        <li>
+          <Link to={`${url}/getmydata`}>Get My Data</Link>
+        </li>
+      </ul>
+
+      <Switch>
+        <Route path={path}>
+          <LogData />
+        </Route>
+      </Switch> */}
+
+      {/* <table>
+        <thead>
+          <td>Name</td>
+          <td>Email</td>
+        </thead>
+      </table> */}
     </div>
   );
 }
